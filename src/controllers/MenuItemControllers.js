@@ -1,12 +1,20 @@
 const { response } = require("express");
 const { v4: uuid } = require("uuid");
-const itemCommand = require("../models/itemsCommands");
+const menuItem = require("../models/menuItems");
 
 module.exports = {
   async index(request, response) {
     try {
-      const Command = await itemCommand.find();
-      return response.status(200).json({ Command });
+      const Items = await menuItem.find();
+      return response.status(200).json({ Items });
+    } catch (error) {
+      response.status(500).json({ error: error.message });
+    }
+  },
+  async ListItem_Id(request, response) {
+    try {
+      const Item = await menuItem.findById(request.params.id);
+      return response.status(200).json({ Item });
     } catch (error) {
       response.status(500).json({ error: error.message });
     }
@@ -18,8 +26,7 @@ module.exports = {
         .status(400)
         .json({ error: "Nome e preço inteiro são obrigatórios." });
     }
-    const item = new itemCommand({
-      _id: uuid(),
+    const item = new menuItem({
       name,
       wholePrice,
       halfPrice,
