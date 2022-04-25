@@ -3,7 +3,11 @@ const userModels = require("../models/user");
 
 module.exports = {
   async create(request, response) {
+    const { email } = request.body;
     try {
+      if (await userModels.findOne({ email })) {
+        return response.status(400).json({ error: "Usuário já cadastrado" });
+      }
       const user = await userModels.create(request.body);
       return response.status(200).json({ user });
     } catch (error) {

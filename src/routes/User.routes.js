@@ -1,5 +1,6 @@
 const express = require("express");
 const routes = express.Router();
 const UserSchema = require("../controllers/AuthControllers");
-routes.post("/auth/register", UserSchema.create);
+routes.post("/user/create", UserSchema.create);
+// routes.post("/user/auth", UserSchema.create);
 module.exports = routes;
