@@ -17,7 +17,7 @@ app.use(express.json());
 app.use(morgan("dev"));
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.json());
-app.use(cors());
+app.use(cors({ origin: "http://cozinha.comanda" }));
 app.use(routesMenu);
 app.use(routesAuth);
 app.listen(3000, () => {
