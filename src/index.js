@@ -20,6 +20,6 @@ app.use(express.json());
 app.use(cors());
 app.use(routesMenu);
 app.use(routesAuth);
-app.listen(3000, () => {
+app.listen(process.env.PORT || 3000, () => {
   console.log("3000");
 });
