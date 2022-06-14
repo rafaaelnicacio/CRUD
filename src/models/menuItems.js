@@ -13,7 +13,7 @@ const menuItems = new mongoose.Schema({
     type: Number,
     required: false,
   },
-  descrition: {
+  description: {
     type: String,
     required: true,
   },

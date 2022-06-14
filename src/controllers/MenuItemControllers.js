@@ -18,7 +18,7 @@ module.exports = {
     }
   },
   async create(request, response) {
-    const { name, wholePrice, halfPrice } = request.body;
+    const { name, wholePrice, halfPrice, description } = request.body;
     if (!name || !wholePrice) {
       return response
         .status(400)
