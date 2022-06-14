@@ -13,5 +13,9 @@ const menuItems = new mongoose.Schema({
     type: Number,
     required: false,
   },
+  descrition: {
+    type: String,
+    required: false,
+  },
 });
-module.exports = mongoose.model("menuItems", menuItems)
+module.exports = mongoose.model("menuItems", menuItems);

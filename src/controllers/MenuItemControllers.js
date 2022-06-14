@@ -28,6 +28,7 @@ module.exports = {
       name,
       wholePrice,
       halfPrice,
+      description,
     });
     try {
       await item.save();
