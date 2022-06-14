@@ -1,10 +1,6 @@
 const mongoose = require("mongoose");
 
-const itemsCommandsSchema = new mongoose.Schema({
-  _id: {
-    type: String,
-    required: true,
-  },
+const menuItems = new mongoose.Schema({
   name: {
     type: String,
     required: true,
@@ -18,4 +14,4 @@ const itemsCommandsSchema = new mongoose.Schema({
     required: false,
   },
 });
-module.exports = mongoose.model("itemsCommands", itemsCommandsSchema)
+module.exports = mongoose.model("menuItems", menuItems)
